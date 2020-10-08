@@ -9,7 +9,7 @@ ARG BUILD_RFC3339="1970-01-01T00:00:00Z"
 ARG COMMIT="local"
 ARG VERSION="v0.4.0"
 
-FROM microsoft/dotnet:2.2-aspnetcore-runtime AS runtime
+FROM mcr.microsoft.com/dotnet/core/aspnet:3.1 AS runtime
 WORKDIR /app
 COPY --from=build /app/Covenant/Covenant/out .
 COPY --from=build /app/Covenant/Covenant/Data ./Data
